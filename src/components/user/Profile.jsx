@@ -52,7 +52,7 @@ const Profile = () => {
           return
         }
 
-        const response = await fetch(`http://44.211.197.251:3000/repo/user/${userId}`)
+        const response = await fetch(`http://34.227.150.165:3000/repo/user/${userId}`)
         if (!response.ok) {
           throw new Error("Failed to load your repositories")
         }
@@ -125,7 +125,7 @@ const Profile = () => {
           return
         }
 
-        const response = await fetch(`http://44.211.197.251:3000/userProfile/${userId}`)
+        const response = await fetch(`http://34.227.150.165:3000/userProfile/${userId}`)
         if (!response.ok) {
           throw new Error("Failed to fetch user data")
         }
@@ -169,7 +169,7 @@ const Profile = () => {
         return
       }
 
-      const response = await fetch(`http://44.211.197.251:3000/user/userProfile/update/${userId}`, {
+      const response = await fetch(`http://34.227.150.165:3000/user/userProfile/update/${userId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -221,7 +221,7 @@ const Profile = () => {
         return
       }
 
-      const response = await fetch(`http://44.211.197.251:3000/repo/star/${repoId}`, {
+      const response = await fetch(`http://34.227.150.165:3000/repo/star/${repoId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -254,7 +254,7 @@ const Profile = () => {
         return
       }
 
-      const response = await fetch(`http://44.211.197.251:3000/repo/unstar/${repoId}`, {
+      const response = await fetch(`http://34.227.150.165:3000/repo/unstar/${repoId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
