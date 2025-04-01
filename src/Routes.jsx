@@ -6,9 +6,13 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Profile from "./components/user/Profile";
 import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
+import App from "./App";
 
 // Auth Context
 import { useAuth } from "./authContext";
+import Home from "./components/home/Home";
+import About from "./components/about/About";
+import RepoPage from "./components/dashboard/RepoPage";
 
 const ProjectRoutes = ()=>{
     const {currentUser, setCurrentUser} = useAuth();
@@ -23,7 +27,7 @@ const ProjectRoutes = ()=>{
 
         if(!userIdFromStorage && !["/auth", "/signup"].includes(window.location.pathname))
         {
-            navigate("/auth");
+            navigate("/home");
         }
 
         if(userIdFromStorage && window.location.pathname=='/auth'){
@@ -32,10 +36,16 @@ const ProjectRoutes = ()=>{
     }, [currentUser, navigate, setCurrentUser]);
 
     let element = useRoutes([
+       
         {
             path:"/",
             element:<Dashboard/>
         },
+        {
+            path:"/home",
+            element:<Home/>
+        }
+        ,
         {
             path:"/auth",
             element:<Login/>
@@ -47,6 +57,15 @@ const ProjectRoutes = ()=>{
         {
             path:"/profile",
             element:<Profile/>
+        },
+        {
+           path:"/about",
+           element:<About/>
+
+        },{
+
+            path:"/repo/id/:repoId",
+            element:<RepoPage/>
         }
     ]);
 
