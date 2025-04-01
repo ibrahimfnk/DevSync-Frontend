@@ -86,7 +86,7 @@ const RepoPage = () => {
     const fetchRepo = async () => {
       try {
         console.log("Fetching repo with ID:", repoId)
-        const response = await fetch(`http://localhost:3000/repo/id/${repoId}`)
+        const response = await fetch(`http://44.211.197.251:3000/repo/id/${repoId}`)
         if (!response.ok) throw new Error("Repository not found")
         const data = await response.json()
         setRepo(data)

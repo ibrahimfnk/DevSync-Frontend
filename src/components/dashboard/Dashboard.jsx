@@ -67,7 +67,7 @@ const Dashboard = () => {
     const fetchRepositories = async () => {
       setIsLoading(true)
       try {
-        const response = await fetch(`http://localhost:3000/repo/user/${userId}`)
+        const response = await fetch(`http://44.211.197.251:3000/repo/user/${userId}`)
         const data = await response.json()
         setRepositories(data.repositories)
         setSearchResults(data.repositories)
@@ -80,7 +80,7 @@ const Dashboard = () => {
 
     const fetchSuggestedRepositories = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/repo/all`)
+        const response = await fetch(`http://44.211.197.251:3000/repo/all`)
         const data = await response.json()
         setSuggestedRepositories(data)
       } catch (error) {
@@ -152,7 +152,7 @@ const Dashboard = () => {
     setIsCreatingRepo(true)
     try {
       const userId = localStorage.getItem("userId")
-      const response = await fetch("http://localhost:3000/repo/create", {
+      const response = await fetch("http://44.211.197.251:3000/repo/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -173,7 +173,7 @@ const Dashboard = () => {
 
       const data = await response.json()
       // Refresh repositories list
-      const updatedRepos = await fetch(`http://localhost:3000/repo/user/${userId}`).then(res => res.json())
+      const updatedRepos = await fetch(`http://44.211.197.251:3000/repo/user/${userId}`).then(res => res.json())
       setRepositories(updatedRepos.repositories)
       setSearchResults(updatedRepos.repositories)
       

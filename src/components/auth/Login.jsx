@@ -41,7 +41,7 @@ export default function Login() {
     
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:3000/login", {
+      const res = await axios.post("http://44.211.197.251:3000/login", {
         email,
         password,
       });
