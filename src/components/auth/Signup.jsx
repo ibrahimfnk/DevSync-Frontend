@@ -34,7 +34,7 @@ export default function Signup() {
     if (!validateForm()) return;
     try {
       setLoading(true);
-      const res = await axios.post("http://34.227.150.165:3000/signup", {
+      const res = await axios.post("http://54.84.176.139:3000/signup", {
         email: email,
         password: password,
         username: username,
