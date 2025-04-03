@@ -41,7 +41,7 @@ export default function Login() {
     
     try {
       setLoading(true);
-      const res = await axios.post("http://54.84.176.139:3000/login", {
+      const res = await axios.post("https://dev-sync-backend.vercel.app/login", {
         email,
         password,
       });

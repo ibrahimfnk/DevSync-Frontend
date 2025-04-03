@@ -52,7 +52,7 @@ const Profile = () => {
           return
         }
 
-        const response = await fetch(`http://54.84.176.139:3000/repo/user/${userId}`)
+        const response = await fetch(`https://dev-sync-backend.vercel.app/repo/user/${userId}`)
         if (!response.ok) {
           throw new Error("Failed to load your repositories")
         }
@@ -125,7 +125,7 @@ const Profile = () => {
           return
         }
 
-        const response = await fetch(`http://54.84.176.139:3000/userProfile/${userId}`)
+        const response = await fetch(`https://dev-sync-backend.vercel.app/userProfile/${userId}`)
         if (!response.ok) {
           throw new Error("Failed to fetch user data")
         }
@@ -169,7 +169,7 @@ const Profile = () => {
         return
       }
 
-      const response = await fetch(`http://54.84.176.139:3000/user/userProfile/update/${userId}`, {
+      const response = await fetch(`https://dev-sync-backend.vercel.app/user/userProfile/update/${userId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -221,7 +221,7 @@ const Profile = () => {
         return
       }
 
-      const response = await fetch(`http://54.84.176.139:3000/repo/star/${repoId}`, {
+      const response = await fetch(`https://dev-sync-backend.vercel.app/repo/star/${repoId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -254,7 +254,7 @@ const Profile = () => {
         return
       }
 
-      const response = await fetch(`http://54.84.176.139:3000/repo/unstar/${repoId}`, {
+      const response = await fetch(`https://dev-sync-backend.vercel.app/repo/unstar/${repoId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
